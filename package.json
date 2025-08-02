@@ -1,5 +1,7 @@
 {
-  "author": {"name": "daifoll"},
+  "author": {
+    "name": "daifoll"
+  },
   "name": "nuxt-app",
   "private": true,
   "type": "module",
@@ -16,8 +18,10 @@
     "@nuxt/devtools": "^2.6.2",
     "@nuxt/eslint": "^1.7.1",
     "@nuxt/image": "^1.11.0",
+    "@pinia/nuxt": "^0.11.2",
     "better-sqlite3": "^12.2.0",
     "nuxt": "^4.0.1",
+    "pinia": "^3.0.3",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },

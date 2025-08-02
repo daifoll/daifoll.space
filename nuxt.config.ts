@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
     '@nuxt/eslint',
     '@nuxtjs/tailwindcss',
-    '@hypernym/nuxt-anime'
+    '@hypernym/nuxt-anime',
+    '@pinia/nuxt'
   ],
 
 
