@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
     '@nuxt/eslint',
     '@nuxtjs/tailwindcss',
-    '@hypernym/nuxt-anime',
     '@pinia/nuxt'
   ],
 
@@ -26,10 +25,4 @@ export default defineNuxtConfig({
   tailwindcss: {
     
   },
-
-  /* Anime.js config module */
-  anime: {
-    provide: true,
-    composables: true
-  }
 })
