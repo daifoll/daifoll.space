@@ -4,14 +4,15 @@
         <div class="main-header-row creator-block w-full flex border-b-2 border-">
             <!--картинка -->
             <NuxtLink to="/" class="flex flex-col">
-                <span class="creator-name text-4xl">Kirill Kobykhnov</span>
+                <span class="creator-name text-4xl">{{ data?.creatorName}}</span>
                 <!-- <span class="text-sm">daifoll</span> -->
             </NuxtLink>
         </div>
-        <div class="main-header-row w-full navigation-block flex">
+        <button class="flex bg-indigo-200 text-slate-50 text-xl self-start p-5 rounded-xl mt-4 items-center ml-2 cursor-pointer" @click="usePreferencesStore().toChangeLang(currentLang === 'eng'? 'ru' : 'eng')">{{ currentLang }}</button>
+        <div class="main-header-row w-full navigation-block flex mt-20">
             <nav class="main-header__navigation navigation">
                 <ul class="flex flex-col">
-                    <li class="mt-40 navigation__bio w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/bio">BIO</NuxtLink></li>
+                    <li class="navigation__bio w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/bio">BIO</NuxtLink></li>
                     <li class="mt-8 navigation__works w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/works">WORKS</NuxtLink></li>
                     <li class="mt-8 navigation__whatiuse w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/whatiuse">WHAT I USE</NuxtLink></li>
                     <li class="mt-8 navigation__source w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="https://github.com/daifoll/daifoll.space" target="_blank">SOURCE</NuxtLink></li>
@@ -27,6 +28,19 @@
 
 <script lang="ts" setup>
 import { animate, text, stagger } from 'animejs';
+
+const store = usePreferencesStore()
+
+const currentLang = computed(() => store.currentLang)
+
+const { data, error, pending } = useFetch('/api/getHeaderContent', 
+{ 
+    server: true,
+    query: computed(() => ({ lang: store.currentLang }))
+}
+)
+
+// const currentLang = usePrefe
 
 onMounted(() => {
 //    const {words} = text.split('.creator-name', {words: true, chars: false})
