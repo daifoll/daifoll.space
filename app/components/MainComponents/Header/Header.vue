@@ -8,13 +8,29 @@
                 <!-- <span class="text-sm">daifoll</span> -->
             </NuxtLink>
         </div>
-        <button class="flex bg-indigo-200 text-slate-50 text-xl self-start p-5 rounded-xl mt-4 items-center ml-2 cursor-pointer" @click="usePreferencesStore().toChangeLang(currentLang === 'eng'? 'ru' : 'eng')">{{ currentLang }}</button>
+        <div class="
+            main-header__lang-block 
+            relative 
+            lang-block 
+            flex 
+            items-center 
+            justify-between 
+            w-20 
+            rounded-xl 
+            mt-4 
+            h-max 
+            bg-indigo-100
+            ">
+            <span class="main-header__lang-block--indicator absolute w-10 h-full bg-indigo-300 rounded-xl z-10"></span>
+            <button class="lang-block--eng flex z-20 text-white text-xl self-start w-10 p-1 font-semibold justify-center rounded-xl items-center cursor-pointer" @click="handleChangeLang">eng</button>
+            <button class="lang-block--rus flex z-20 text-white text-xl self-start w-10 p-1 font-semibold justify-center rounded-xl items-center cursor-pointer" @click="handleChangeLang">ru</button>
+        </div>
         <div class="main-header-row w-full navigation-block flex mt-20">
             <nav class="main-header__navigation navigation">
                 <ul class="flex flex-col">
-                    <li class="navigation__bio w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/bio">BIO</NuxtLink></li>
-                    <li class="mt-8 navigation__works w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/works">WORKS</NuxtLink></li>
-                    <li class="mt-8 navigation__whatiuse w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/whatiuse">WHAT I USE</NuxtLink></li>
+                    <li class="navigation__bio w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/bio">{{ data?.bio }}</NuxtLink></li>
+                    <li class="mt-8 navigation__works w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/works">{{ data?.works }}</NuxtLink></li>
+                    <li class="mt-8 navigation__whatiuse w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/whatiuse">{{ data?.whatiuse }}</NuxtLink></li>
                     <li class="mt-8 navigation__source w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="https://github.com/daifoll/daifoll.space" target="_blank">SOURCE</NuxtLink></li>
                 </ul>
             </nav>
@@ -35,10 +51,92 @@ const currentLang = computed(() => store.currentLang)
 
 const { data, error, pending } = useFetch('/api/getHeaderContent', 
 { 
-    server: true,
+    server: false,
     query: computed(() => ({ lang: store.currentLang }))
 }
 )
+
+let initialized = false
+let toggle = false
+
+const handleChangeLang = () => {
+    initialized = true
+    usePreferencesStore().toChangeLang(currentLang.value === 'eng'? 'ru' : 'eng')
+}
+
+watch(() => pending.value, () => {
+
+    if(!pending.value && initialized) {
+        console.log('toggle', toggle)
+        if(toggle) {
+            animate('.main-header__lang-block--indicator', {
+                right: {to: '40px'},
+                ease: 'out',
+                duration: 100
+            })
+        } else {
+            animate('.main-header__lang-block--indicator', {
+                right: {to: '0'},
+                ease: 'in',
+                duration: 100
+            })
+        }
+
+        toggle = !toggle
+
+        animate('.creator-block', {
+            opacity: [{
+                from: '0', to: '1'
+            }],
+
+            delay: 0,
+            ease: 'inQuad',
+            duration: 500
+        })
+
+        animate('.navigation__bio', {
+            opacity: [{
+                from: '0', to: '1'
+            }],
+
+            delay: 100,
+            ease: 'inCirc',
+            duration: 500
+        })
+
+        animate('.navigation__works', {
+            opacity: [{
+                from: '0', to: '1'
+            }],
+
+            delay: 200,
+            ease: 'inCirc',
+            duration: 500
+        })
+
+        animate('.navigation__whatiuse', {
+            opacity: [{
+                from: '0', to: '1'
+            }],
+
+            delay: 300,
+            ease: 'inCirc',
+            duration: 500
+        })
+
+        animate('.navigation__source', {
+            opacity: [{
+                from: '0', to: '1'
+            }],
+
+            delay: 400,
+            ease: 'inCirc',
+            duration: 500
+        })
+    }
+
+    console.log('pending: ', pending.value)
+})
 
 // const currentLang = usePrefe
 
@@ -118,16 +216,6 @@ animate('.navigation__source', {
     ease: 'inCirc',
     duration: 500
 })
-    // animate(words, {
-    // // Property keyframes
-    // y: [
-    //     { to: '-1rem', ease: 'outExpo', duration: 500 },
-    //     { to: 0, ease: 'inSine', duration: 500 }
-    // ],
-    // ease: 'inExpo',
-    // loopDelay: 1000,
-    // loop: true
-    // });
 })
 </script>
 
