@@ -35,8 +35,8 @@
                 </ul>
             </nav>
         </div>
-        <div class="main-header-row">
-
+        <div class="main-header-row main-header__contact-me flex justify-center">
+            <a href="mailto:kobykhnov.bl@gmail.com" class="bg-indigo-300 text-2xl p-5 rounded-md font-semibold mt-40 text-white hover:bg-white hover:text-gray-900 hover:border-2 hover:border-indigo-300 select-none cursor-pointer">{{ data?.contactme }}</a>
         </div>
     </div>
   </div>
@@ -94,6 +94,16 @@ watch(() => pending.value, () => {
             duration: 500
         })
 
+        // animate('.main-header__lang-block', {
+        //     opacity: [{
+        //         from: '0', to: '1'
+        //     }],
+
+        //     delay: 100,
+        //     ease: 'inQuad',
+        //     duration: 500
+        // })
+
         animate('.navigation__bio', {
             opacity: [{
                 from: '0', to: '1'
@@ -133,6 +143,16 @@ watch(() => pending.value, () => {
             ease: 'inCirc',
             duration: 500
         })
+
+        animate('.main-header__contact-me', {
+            opacity: [{
+                from: '0', to: '1'
+            }],
+
+            delay: 500,
+            ease: 'inCirc',
+            duration: 500
+        })
     }
 
     console.log('pending: ', pending.value)
@@ -141,31 +161,14 @@ watch(() => pending.value, () => {
 // const currentLang = usePrefe
 
 onMounted(() => {
-//    const {words} = text.split('.creator-name', {words: true, chars: false})
 
 animate('.main-header', {
-    // x: [
-    //     {
-    //         from: '-100vh', to: '0',
-    //     }
-    // ],
     width: [{
          from: '0', to: '24rem',
     }],
     ease: 'inOutCubic',
     duration: 1000
 })
-
-
-// animate('.main-header-row', {
-//     opacity: [{
-//         from: '0', to: '1'
-//     }],
-
-//     delay: 1100,
-//     ease: 'inQuad',
-//     duration: 500
-// })
 
 animate('.creator-block', {
     opacity: [{
@@ -177,45 +180,65 @@ animate('.creator-block', {
     duration: 500
 })
 
-animate('.navigation__bio', {
-    opacity: [{
-        from: '0', to: '1'
-    }],
+    animate('.main-header__lang-block', {
+        opacity: [{
+            from: '0', to: '1'
+        }],
 
-    delay: 1300,
-    ease: 'inCirc',
-    duration: 500
-})
+        delay: 1200,
+        ease: 'inQuad',
+        duration: 500
+    })
 
-animate('.navigation__works', {
-    opacity: [{
-        from: '0', to: '1'
-    }],
+    animate('.navigation__bio', {
+        opacity: [{
+            from: '0', to: '1'
+        }],
 
-    delay: 1400,
-    ease: 'inCirc',
-    duration: 500
-})
+        delay: 1300,
+        ease: 'inCirc',
+        duration: 500
+    })
 
-animate('.navigation__whatiuse', {
-    opacity: [{
-        from: '0', to: '1'
-    }],
+    animate('.navigation__works', {
+        opacity: [{
+            from: '0', to: '1'
+        }],
 
-    delay: 1500,
-    ease: 'inCirc',
-    duration: 500
-})
+        delay: 1400,
+        ease: 'inCirc',
+        duration: 500
+    })
 
-animate('.navigation__source', {
-    opacity: [{
-        from: '0', to: '1'
-    }],
+    animate('.navigation__whatiuse', {
+        opacity: [{
+            from: '0', to: '1'
+        }],
 
-    delay: 1600,
-    ease: 'inCirc',
-    duration: 500
-})
+        delay: 1500,
+        ease: 'inCirc',
+        duration: 500
+    })
+
+    animate('.navigation__source', {
+        opacity: [{
+            from: '0', to: '1'
+        }],
+
+        delay: 1600,
+        ease: 'inCirc',
+        duration: 500
+    })
+
+    animate('.main-header__contact-me', {
+        opacity: [{
+            from: '0', to: '1'
+        }],
+
+        delay: 1700,
+        ease: 'inCirc',
+        duration: 500
+    })
 })
 </script>
 

@@ -7,7 +7,8 @@ export default defineEventHandler(async (event) => {
         creatorName: lang === 'ru' ? 'Кирилл Кобыхнов' : 'Kirill Kobykhnov',
         bio: lang === 'ru' ? 'ОБО МНЕ': 'BIO',
         works: lang === 'ru' ? 'ПРОЕКТЫ': 'WORKS',
-        whatiuse: lang === 'ru' ? 'МОЙ СТЕК': 'WHAT I USE'
+        whatiuse: lang === 'ru' ? 'МОЙ СТЕК': 'WHAT I USE',
+        contactme: lang === 'ru' ? 'НАПИСАТЬ МНЕ': 'CONTACT ME'
     }
 
     return headerContent
