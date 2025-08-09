@@ -1,7 +1,7 @@
 export default defineEventHandler(async (event) => {
     const query = getQuery(event)
 
-    const lang = query.lang || 'rus'
+    const lang = query.lang || 'ru'
 
     const headerContent = {
         creatorName: lang === 'ru' ? 'Кирилл Кобыхнов' : 'Kirill Kobykhnov',

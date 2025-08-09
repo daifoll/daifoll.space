@@ -4,7 +4,7 @@
         <div class="main-header-row creator-block w-full flex border-b-2 border-">
             <!--картинка -->
             <NuxtLink to="/" class="flex flex-col">
-                <span class="creator-name text-4xl">daifoll.space</span>
+                <span class="creator-name text-4xl">daifoll.space <span class="text-gray-300">v{{pkg.version}}</span></span>
                 <!-- <span class="text-sm">daifoll</span> -->
             </NuxtLink>
         </div>
@@ -43,7 +43,8 @@
 </template>
 
 <script lang="ts" setup>
-import { animate, text, stagger } from 'animejs';
+import { animate } from 'animejs';
+import pkg from '../../../../package.json';
 
 const store = usePreferencesStore()
 
