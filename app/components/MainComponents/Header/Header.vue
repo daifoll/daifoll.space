@@ -49,6 +49,7 @@ import pkg from '../../../../package.json';
 const store = usePreferencesStore()
 
 const currentLang = computed(() => store.currentLang)
+const isTurnAnimation = computed(() => store.turnAnimations)
 
 const { data, error, pending } = useFetch('/api/getHeaderContent', 
 { 
@@ -65,9 +66,13 @@ const handleChangeLang = () => {
     usePreferencesStore().toChangeLang(currentLang.value === 'eng'? 'ru' : 'eng')
 }
 
+const handleTurnAnimation = () => {
+    store.toTurnAnimations(!isTurnAnimation.value)
+}
+
 watch(() => pending.value, () => {
 
-    if(!pending.value && initialized) {
+    if(!pending.value && initialized && !isTurnAnimation.value) {
         console.log('toggle', toggle)
         if(toggle) {
             animate('.main-header__lang-block--indicator', {
@@ -162,7 +167,7 @@ watch(() => pending.value, () => {
 // const currentLang = usePrefe
 
 onMounted(() => {
-
+if(isTurnAnimation.value) return
 animate('.main-header', {
     width: [{
          from: '0', to: '24rem',

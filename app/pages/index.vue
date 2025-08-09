@@ -27,6 +27,7 @@
 import { animate } from 'animejs';
 
 const store = usePreferencesStore()
+const isTurnAnimation = computed(() => store.turnAnimations)
 
 const { data, error, pending } = useFetch('/api/getIndexPageContent', 
 { 
@@ -78,7 +79,7 @@ const startAnimations = () => {
 
 onMounted(() => {
   watch(() => pending.value, (newPending) => {
-    if (!newPending && data.value) {
+    if (!newPending && data.value && !isTurnAnimation.value) {
       showContent.value = true
       nextTick(() => {
         setTimeout(startAnimations, 100)
@@ -92,6 +93,7 @@ onMounted(() => {
         }
       })
     } else {
+      
       showContent.value = false
     }
   }, { immediate: true })
