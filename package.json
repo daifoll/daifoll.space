@@ -20,6 +20,7 @@
     "@nuxt/eslint": "^1.7.1",
     "@nuxt/image": "^1.11.0",
     "@pinia/nuxt": "^0.11.2",
+    "@vesp/nuxt-fontawesome": "^2.0.0",
     "animejs": "^4.1.2",
     "better-sqlite3": "^12.2.0",
     "nuxt": "^4.0.1",
@@ -27,6 +28,9 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^7.0.0",
+    "@fortawesome/free-regular-svg-icons": "^7.0.0",
+    "@fortawesome/free-solid-svg-icons": "^7.0.0",
     "@nuxtjs/tailwindcss": "^6.14.0"
   }
 }

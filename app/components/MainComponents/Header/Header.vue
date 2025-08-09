@@ -4,7 +4,7 @@
         <div class="main-header-row creator-block w-full flex border-b-2 border-">
             <!--картинка -->
             <NuxtLink to="/" class="flex flex-col">
-                <span class="creator-name text-4xl">{{ data?.creatorName}}</span>
+                <span class="creator-name text-4xl">daifoll.space</span>
                 <!-- <span class="text-sm">daifoll</span> -->
             </NuxtLink>
         </div>
@@ -84,15 +84,15 @@ watch(() => pending.value, () => {
 
         toggle = !toggle
 
-        animate('.creator-block', {
-            opacity: [{
-                from: '0', to: '1'
-            }],
+        // animate('.creator-block', {
+        //     opacity: [{
+        //         from: '0', to: '1'
+        //     }],
 
-            delay: 0,
-            ease: 'inQuad',
-            duration: 500
-        })
+        //     delay: 0,
+        //     ease: 'inQuad',
+        //     duration: 500
+        // })
 
         // animate('.main-header__lang-block', {
         //     opacity: [{

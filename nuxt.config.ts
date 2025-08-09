@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
     '@nuxt/eslint',
     '@nuxtjs/tailwindcss',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@vesp/nuxt-fontawesome',
   ],
 
 
@@ -25,4 +26,11 @@ export default defineNuxtConfig({
   tailwindcss: {
     
   },
+
+  fontawesome: {
+    icons: {
+      regular: ['user'],
+      brands: ['github'],
+    }
+  }
 })
