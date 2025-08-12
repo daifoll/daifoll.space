@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
 
     const indexPageContent = {
         creatorName: lang === 'ru' ? 'Кирилл Кобыхнов' : 'Kirill Kobykhnov',
-        subTitle: lang === 'ru' ? 'Веб-разработчик ( Front-end / немного full-stack )' : 'Web-develop ( Front-end / a bit of full-stack )',
+        subTitle: lang === 'ru' ? 'Веб-разработчик ( Front-end / немного full-stack )' : 'Web-developer ( Front-end / a bit of full-stack )',
         mainTextFirstElement: lang === 'ru' ? 
         'Привет! Меня зовут Кирилл, я фронтенд-разработчик из Новосибирска.'
         :

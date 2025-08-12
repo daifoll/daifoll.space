@@ -1,5 +1,5 @@
 <template>
-    <div class="main-page w-8/12 mx-auto py-20 px-10">
+    <div class="main-page w-8/12 mx-auto py-20 px-5">
       <div v-if="showContent" class="main-page-wrapper flex justify-between gap-5">
         <div class="main-page__about-me about-me basis-2/3 flex flex-col">
           <h1 ref="titleEl" class="about-me__title opacity-0 text-4xl font-bold text-gray-800">{{ data?.creatorName }}</h1>
@@ -16,8 +16,8 @@
             <a ref="resumeBtnEl" class="about-me__resume-btn opacity-0 bg-indigo-300 text-xl p-3 rounded-md border-2 border-indigo-300 font-semibold ml-3 text-white hover:bg-white hover:text-gray-900 select-none cursor-pointer">{{ data?.downloadBtn }}</a>
           </div>
         </div>
-        <div class="about-me__image w-20 basis-1/3 h-120 mt-10 rounded-lg overflow-hidden">
-          <img ref="creatorAvatar" class="object-cover object-center" style="transform: translateX(-100vh);" src="@/assets/kirill-avatar.jpg" alt="Kirill Kobykhnov avatar"/>
+        <div class="about-me__image w-20 basis-1/3 h-100 mt-10 rounded-lg overflow-hidden">
+          <img ref="creatorAvatar" class="object-cover object-center w-full h-full" style=" transform: translateX(-100vh);" src="@/assets/kirill-avatar.jpg" alt="Kirill Kobykhnov avatar"/>
         </div>
       </div>
     </div>
@@ -87,13 +87,14 @@ onMounted(() => {
         if (creatorAvatar.value) {
           animate(creatorAvatar.value, {
             x: {from: '100vh', to: '0'},
+            delay: 500,
             ease: 'inOutCubic',
-            duration: 800
+            duration: 700
           })
         }
       })
     } else {
-      
+
       showContent.value = false
     }
   }, { immediate: true })
