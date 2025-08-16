@@ -1,69 +1,94 @@
 <template>
   <div class="bio-page w-8/12 mx-auto py-14 px-5">
-    <div class="bio-page-wrapper flex items-center justify-center flex-col">
-      <div class="bio-content">
-        <div class="bio-content-block  flex gap-8 items-center hover:bg-indigo-200 hover:rounded-lg hover:cursor-pointer hover:text-white p-5">
-          <span class="relative bg-indigo-200 rounded-full w-16 h-16 
-             after:content-[''] after:absolute after:top-1/2 after:left-1/2
-             after:-translate-x-1/2 after:-translate-y-1/2
-             after:bg-white after:rounded-full after:w-10 after:h-10">
+    <div class="bio-page-wrapper flex flex-col">
+      <div class="bio-title text-5xl self-start mb-20 border-b-2 w-full border-slate-200 font-medium text-slate-500">MY JOURNEY</div>
+      <div class="bio-content relative">
+        <!-- Единая сплошная вертикальная линия от первого до последнего кружка -->
+        <div class="absolute left-[52px] w-0.5 bg-indigo-200 z-0" 
+             style="top: 52px; height: calc(100% - 52px - 5rem);"></div>
+        <div @click="() => toggleDescription(0)" class="bio-content-block  flex gap-8 items-start hover:bg-indigo-300 hover:rounded-lg hover:cursor-pointer hover:text-white p-5 group select-none relative z-10">
+          <span class="relative bg-indigo-200 rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center
+             group-hover:bg-white">
+            <span class="text-2xl">🍼</span>
           </span>
           <div class="bio-content-block-row">
-            <span class="bio-content-block-year font-medium text-5xl text-slate-500">1998</span>
+            <span class="bio-content-block-year font-medium text-5xl text-slate-500 group-hover:text-white">1998</span>
             <div class="bio-content-block-description text-3xl max-w-[700px] mt-5 font-normal">
               Born in Stepnoye Ozero, Altai Krai.
             </div>
+            <div class="bio-content-block-description--full overflow-hidden text-2xl transition-all duration-300 ease-in-out" 
+                 :class="{ 'h-0 opacity-0': !expandedBlocks[0], 'h-auto opacity-100 mt-3': expandedBlocks[0] }"
+                 ref="bioContentBlock0">
+              And playing with my friends of the streets, it's been a cool.
+              And playing with my friends of the streets, it's been a cool.
+            </div>
           </div>
         </div>
-        <div class="bio-content-block  flex gap-8 items-center mt-10 hover:bg-indigo-200 hover:rounded-lg hover:cursor-pointer hover:text-white p-5">
-          <span class="relative bg-indigo-200 rounded-full w-16 h-16 
-             after:content-[''] after:absolute after:top-1/2 after:left-1/2
-             after:-translate-x-1/2 after:-translate-y-1/2
-             after:bg-white after:rounded-full after:w-10 after:h-10">
+        <div @click="() => toggleDescription(1)" class="bio-content-block  flex gap-8 items-start mt-10 hover:bg-indigo-300 hover:rounded-lg hover:cursor-pointer hover:text-white p-5 group select-none relative z-10">
+          <span class="relative bg-indigo-200 rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center
+             group-hover:bg-white">
+            <span class="text-2xl">🎓</span>
           </span>
           <div class="bio-content-block-row">
-            <span class="bio-content-block-year font-medium text-5xl text-slate-500">2015 — 2019</span>
+            <span class="bio-content-block-year font-medium text-5xl text-slate-500 group-hover:text-white">2015 — 2019</span>
             <div class="bio-content-block-description text-3xl max-w-[700px] mt-5 font-normal">
               Graduaded form "Altai Industrial and Economic College"— Major: Information Security of Automated Systems
             </div>
+            <div class="bio-content-block-description--full overflow-hidden text-2xl  transition-all duration-300 ease-in-out" 
+                 :class="{ 'h-0 opacity-0': !expandedBlocks[1], 'h-auto opacity-100 mt-3': expandedBlocks[1] }"
+                 ref="bioContentBlock1">
+              And playing with my friends of the streets, it's been a cool.
+            </div>
           </div>
         </div>
-        <div class="bio-content-block  flex gap-8 items-center mt-10 hover:bg-indigo-200 hover:rounded-lg hover:cursor-pointer hover:text-white p-5">
-          <span class="relative bg-indigo-200 rounded-full w-16 h-16 
-             after:content-[''] after:absolute after:top-1/2 after:left-1/2
-             after:-translate-x-1/2 after:-translate-y-1/2
-             after:bg-white after:rounded-full after:w-10 after:h-10">
+        <div @click="() => toggleDescription(2)" class="bio-content-block  flex gap-8 items-start mt-10 hover:bg-indigo-300 hover:rounded-lg hover:cursor-pointer hover:text-white p-5 group select-none relative z-10">
+          <span class="relative bg-indigo-200 rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center
+             group-hover:bg-white">
+            <span class="text-2xl">👨‍💻</span>
           </span>
           <div class="bio-content-block-row">
-            <span class="bio-content-block-year font-medium text-5xl text-slate-500">2023 — 2024</span>
+            <span class="bio-content-block-year font-medium text-5xl text-slate-500 group-hover:text-white">2023 — 2024</span>
             <div class="bio-content-block-description text-3xl max-w-[700px] mt-5 font-normal">
               Junior Full-stack Developer — "Everyteka"
             </div>
-          </div>
-        </div>
-        <div class="bio-content-block  flex gap-8 items-center mt-10 hover:bg-indigo-200 hover:rounded-lg hover:cursor-pointer hover:text-white p-5">
-          <span class="relative bg-indigo-200 rounded-full w-16 h-16 
-             after:content-[''] after:absolute after:top-1/2 after:left-1/2
-             after:-translate-x-1/2 after:-translate-y-1/2
-             after:bg-white after:rounded-full after:w-10 after:h-10">
-          </span>
-          <div class="bio-content-block-row">
-            <span class="bio-content-block-year font-medium text-5xl text-slate-500">2024 — present</span>
-            <div class="bio-content-block-description text-3xl max-w-[700px] mt-5 font-normal">
-              Front-end Developer — "Bayte Transit"
+            <div class="bio-content-block-description--full overflow-hidden text-2xl  transition-all duration-300 ease-in-out" 
+                 :class="{ 'h-0 opacity-0': !expandedBlocks[2], 'h-auto opacity-100 mt-3': expandedBlocks[2] }"
+                 ref="bioContentBlock2">
+              Working with Vue.js, Node.js and building web applications for business automation.
             </div>
           </div>
         </div>
-        <div class="bio-content-block  flex gap-8 items-center mt-10 hover:bg-indigo-200 hover:rounded-lg hover:cursor-pointer hover:text-white p-5">
-          <span class="relative bg-indigo-200 rounded-full w-16 h-16 
-             after:content-[''] after:absolute after:top-1/2 after:left-1/2
-             after:-translate-x-1/2 after:-translate-y-1/2
-             after:bg-white after:rounded-full after:w-10 after:h-10">
+        <div @click="() => toggleDescription(3)" class="bio-content-block  flex gap-8 items-start mt-10 hover:bg-indigo-300 hover:rounded-lg hover:cursor-pointer hover:text-white p-5 group select-none relative z-10">
+          <span class="relative bg-indigo-200 rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center
+             group-hover:bg-white">
+            <span class="text-2xl">🚀</span>
           </span>
           <div class="bio-content-block-row">
-            <span class="bio-content-block-year font-medium text-5xl text-slate-500">2025 — present</span>
+            <span class="bio-content-block-year font-medium text-5xl text-slate-500 group-hover:text-white">2024 — present</span>
             <div class="bio-content-block-description text-3xl max-w-[700px] mt-5 font-normal">
-              Freelance
+              Front-end Developer — "Bayte Transit"
+            </div>
+            <div class="bio-content-block-description--full overflow-hidden text-2xl  transition-all duration-300 ease-in-out" 
+                 :class="{ 'h-0 opacity-0': !expandedBlocks[3], 'h-auto opacity-100 mt-3': expandedBlocks[3] }"
+                 ref="bioContentBlock3">
+              Developing modern web interfaces with Vue.js, TypeScript and focusing on user experience.
+            </div>
+          </div>
+        </div>
+        <div @click="() => toggleDescription(4)" class="bio-content-block  flex gap-8 items-start mt-10 hover:bg-indigo-300 hover:rounded-lg hover:cursor-pointer hover:text-white p-5 group select-none relative z-10">
+          <span class="relative bg-indigo-200 rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center
+             group-hover:bg-white">
+            <span class="text-2xl">💼</span>
+          </span>
+          <div class="bio-content-block-row">
+            <span class="bio-content-block-year font-medium text-5xl text-slate-500 group-hover:text-white">2025 — present</span>
+            <div class="bio-content-block-description text-3xl max-w-[700px] mt-5 font-normal">
+              Freelance project
+            </div>
+            <div class="bio-content-block-description--full overflow-hidden text-2xl  transition-all duration-300 ease-in-out" 
+                 :class="{ 'h-0 opacity-0': !expandedBlocks[4], 'h-auto opacity-100 mt-3': expandedBlocks[4] }"
+                 ref="bioContentBlock4">
+              Working on various web development projects, creating modern and responsive applications.
             </div>
           </div>
         </div>
@@ -73,7 +98,11 @@
 </template>
 
 <script lang="ts" setup>
+const expandedBlocks = ref<boolean[]>([false, false, false, false, false])
 
+const toggleDescription = (index: number) => {
+  expandedBlocks.value[index] = !expandedBlocks.value[index]
+}
 </script>
 
 <style>
