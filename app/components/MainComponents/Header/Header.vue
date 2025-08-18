@@ -29,7 +29,7 @@
             <nav class="main-header__navigation navigation">
                 <ul class="flex flex-col">
                     <li class="navigation__bio w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/bio">{{ data?.bio }}</NuxtLink></li>
-                    <li class="mt-8 navigation__works w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/works">{{ data?.works }}</NuxtLink></li>
+                    <li class="mt-8 navigation__works w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/projects">{{ data?.works }}</NuxtLink></li>
                     <li class="mt-8 navigation__whatiuse w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="/whatiuse">{{ data?.whatiuse }}</NuxtLink></li>
                     <li class="mt-8 navigation__source w-max text-4xl border-b-2 border-transparent hover:border-black"><NuxtLink to="https://github.com/daifoll/daifoll.space" target="_blank">SOURCE</NuxtLink></li>
                 </ul>

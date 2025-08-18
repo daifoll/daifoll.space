@@ -25,6 +25,7 @@
 
 <script lang="ts" setup>
 import { animate } from 'animejs';
+import { nextTick, onMounted, watch } from 'vue';
 
 const store = usePreferencesStore()
 const isTurnAnimation = computed(() => store.turnAnimations)
