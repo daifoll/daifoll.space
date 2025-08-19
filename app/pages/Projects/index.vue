@@ -70,6 +70,10 @@
           class="rounded-md bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700
                  dark:bg-indigo-500/20 dark:text-indigo-300"
         >TypeScript</span>
+        
+        <a href="https://sibtrans.ru" target="_blank" class="rounded-md bg-indigo-400  px-3 py-1 text-lg font-medium text-white
+                 dark:bg-indigo-500/20 dark:text-indigo-300 select-none cursor-pointer ml-auto">ОТКРЫТЬ</a>
+      
       </footer>
     </article>
 
@@ -133,6 +137,9 @@
           class="rounded-md bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700
                  dark:bg-indigo-500/20 dark:text-indigo-300"
         >TypeScript</span>
+
+        <a href="https://palitracms.ru" target="_blank" class="rounded-md bg-indigo-400  px-3 py-1 text-lg font-medium text-white
+                 dark:bg-indigo-500/20 dark:text-indigo-300 select-none cursor-pointer ml-auto">ОТКРЫТЬ</a>
       </footer>
     </article>
 
