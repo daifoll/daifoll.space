@@ -10,8 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
     '@nuxt/eslint',
     '@nuxtjs/tailwindcss',
-    '@hypernym/nuxt-anime',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@vesp/nuxt-fontawesome',
   ],
 
 
@@ -27,9 +27,10 @@ export default defineNuxtConfig({
     
   },
 
-  /* Anime.js config module */
-  anime: {
-    provide: true,
-    composables: true
+  fontawesome: {
+    icons: {
+      regular: ['user'],
+      brands: ['github'],
+    }
   }
 })
