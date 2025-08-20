@@ -25,7 +25,7 @@
             Cайт компании
           </h3>
           <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            Официальный сайт логистической компании.
+            Официальный сайт логистической компании
           </p>
         </div>
       </header>
@@ -102,17 +102,17 @@
       </header>
 
       <p class="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-        Интерфейс для расчёта стоимости перевозок, оформления заявок и общения с поддержкой.
+        Платформа для создания полноценных новостных сайтов с поддержкой мощного markdown-редактора
       </p>
 
       <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
         <li class="flex gap-2">
           <span class="text-indigo-500">✓</span>
-          <span>Расчёт стоимости перевозки</span>
+          <span>Создание статьи</span>
         </li>
         <li class="flex gap-2">
           <span class="text-indigo-500">✓</span>
-          <span>Выбор дополнительных услуг</span>
+          <span>Кастомизация итогового сайта - шрифты, фон, дополнительные элементы</span>
         </li>
         <li class="flex gap-2">
           <span class="text-indigo-500">✓</span>
@@ -120,7 +120,7 @@
         </li>
         <li class="flex gap-2">
           <span class="text-indigo-500">✓</span>
-          <span>История заказов с подробной информацией</span>
+          <span>Превью итогового</span>
         </li>
         <li class="flex gap-2">
           <span class="text-indigo-500">✓</span>
@@ -166,7 +166,7 @@
             Личный кабинет
           </h3>
           <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            Личный кабинет клиента логистической компании.
+            Личный кабинет клиента логистической компании
           </p>
         </div>
       </header>
